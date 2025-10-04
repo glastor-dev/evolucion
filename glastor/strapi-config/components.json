@@ -1,0 +1,60 @@
+{
+  "product.specifications": {
+    "collectionName": "components_product_specifications",
+    "info": {
+      "displayName": "Specifications",
+      "description": "Especificaciones técnicas del producto"
+    },
+    "options": {},
+    "attributes": {
+      "material": {
+        "type": "string"
+      },
+      "color": {
+        "type": "json"
+      },
+      "brand": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "warranty": {
+        "type": "string"
+      },
+      "origin": {
+        "type": "string"
+      },
+      "additionalSpecs": {
+        "type": "json"
+      }
+    }
+  },
+  "product.dimensions": {
+    "collectionName": "components_product_dimensions",
+    "info": {
+      "displayName": "Dimensions",
+      "description": "Dimensiones del producto"
+    },
+    "options": {},
+    "attributes": {
+      "length": {
+        "type": "decimal",
+        "min": 0
+      },
+      "width": {
+        "type": "decimal",
+        "min": 0
+      },
+      "height": {
+        "type": "decimal",
+        "min": 0
+      },
+      "unit": {
+        "type": "enumeration",
+        "enum": ["cm", "m", "mm", "in", "ft"],
+        "default": "cm"
+      }
+    }
+  }
+}

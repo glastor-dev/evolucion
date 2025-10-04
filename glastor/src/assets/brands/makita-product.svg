@@ -1,0 +1,31 @@
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="makitaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00B4A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008B7A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="200" fill="url(#makitaGrad)"/>
+  
+  <!-- Tool silhouette -->
+  <g transform="translate(50, 50)">
+    <!-- Drill body -->
+    <rect x="20" y="40" width="80" height="30" fill="#1a1a1a" rx="5"/>
+    <!-- Drill handle -->
+    <rect x="100" y="50" width="60" height="20" fill="#1a1a1a" rx="10"/>
+    <!-- Drill bit -->
+    <rect x="0" y="52" width="25" height="6" fill="#666"/>
+    <!-- Battery -->
+    <rect x="120" y="70" width="40" height="25" fill="#333" rx="3"/>
+    <!-- Makita logo on tool -->
+    <rect x="30" y="45" width="30" height="8" fill="#00B4A6" rx="2"/>
+    <text x="45" y="51" font-family="Arial, sans-serif" font-size="6" font-weight="bold" text-anchor="middle" fill="white">makita</text>
+  </g>
+  
+  <!-- Text overlay -->
+  <text x="150" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    SOPLADOR XGT GRATUITO
+  </text>
+</svg>

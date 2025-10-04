@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentos Legales | GLASTOR - Términos y Condiciones</title>
+  <meta name="description"
+    content="Documentos legales de GLASTOR: Términos y Condiciones, Política de Privacidad, Aviso de Cookies y Aviso Legal. Información completa sobre derechos y obligaciones para usuarios de nuestros servicios." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://glastor.es/terminos.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <meta name="theme-color" content="#42d392" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent" />
+  <style>
+    :root {
+      --primary: #42d392;
+      --primary-dark: #33a06f;
+      --primary-light: rgba(66, 211, 146, 0.1);
+      --secondary: #647eff;
+      --dark-900: #050505;
+      --dark-800: #0a0a0a;
+      --dark-700: #111111;
+      --light: #f3f4f6;
+      --gray-500: #9ca3af;
+      --gray-400: #d1d5db;
+      --card-bg: #1a1a1a;
+      --border: rgba(255, 255, 255, 0.1);
+      --notification-bg: var(--primary);
+      --notification-text: white;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: var(--dark-900);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      background-color: var(--dark-800);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--dark-800), var(--dark-900));
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--primary), var(--light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--gray-500);
+      margin: 0 auto 40px;
+      max-width: 700px;
+    }
+
+    .legal-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .nav-btn {
+      background: var(--dark-700);
+      color: var(--gray-400);
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* Legal Sections */
+    .legal-sections {
+      padding: 80px 0;
+    }
+
+    .legal-section {
+      background: var(--dark-800);
+      border-radius: 16px;
+      padding: 50px;
+      margin-bottom: 40px;
+      border: 1px solid var(--border);
+      display: none;
+    }
+
+    .legal-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .last-updated {
+      background: var(--dark-700);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--primary);
+      border: 1px solid rgba(66, 211, 146, 0.2);
+    }
+
+    .section-content {
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    .section-content h2 {
+      color: var(--secondary);
+      margin: 30px 0 15px;
+      font-size: 1.5rem;
+    }
+
+    .section-content h3 {
+      color: var(--primary);
+      margin: 25px 0 15px;
+      font-size: 1.2rem;
+    }
+
+    .section-content p {
+      margin-bottom: 20px;
+    }
+
+    .section-content ul {
+      padding-left: 25px;
+      margin: 15px 0 25px;
+    }
+
+    .section-content li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .section-content li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .highlight {
+      background: var(--primary-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .compliance-badge {
+      background: var(--dark-700);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border-left: 4px solid var(--primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .badge-icon {
+      background: var(--primary-light);
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark-800);
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      color: var(--gray-500);
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 99;
+      box-shadow: 0 5px 15px rgba(66, 211, 146, 0.3);
+      pointer-events: none;
+      /* Evita interacciones cuando no es visible */
+    }
+
+    .scroll-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(0) scale(1.1);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      /* Habilita interacciones cuando es visible */
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .legal-section {
+        padding: 30px;
+      }
+
+      .section-header {
+        flex-direction: column;
+      }
+
+      .legal-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .section-content h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <div class="logo-icon">G</div>
+          <div class="logo-text">GLASTOR</div>
+        </a>
+        <div>
+          <a href="index.html" class="nav-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            Volver al sitio
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Documentos Legales</h1>
+        <p>
+          Conoce nuestros términos, políticas y avisos legales diseñados para
+          proteger tus
+          derechos y cumplir con la normativa RGPD y legislación argentina
+          vigente.
+        </p>
+
+        <div class="legal-nav">
+          <a href="#" class="nav-btn active" data-section="terms">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+              </path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Términos y Condiciones
+          </a>
+          <a href="#" class="nav-btn" data-section="privacy">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Privacidad
+          </a>
+          <a href="#" class="nav-btn" data-section="cookies">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+            Cookies
+          </a>
+          <a href="#" class="nav-btn" data-section="legal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Aviso Legal
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Sections -->
+  <main class="legal-sections container">
+    <!-- Términos y Condiciones -->
+    <section id="terms" class="legal-section active">
+      <div class="section-header">
+        <h2 class="section-title">Términos y Condiciones</h2>
+        <div class="last-updated">Última actualización: <span
+            id="termsDate"></span></div>
+      </div>
+
+      <div class="section-content">
+        <div class="compliance-badge">
+          <div class="badge-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3>Cumplimiento RGPD y Ley 25.326</h3>
+            <p>
+              Este documento cumple con el Reglamento General de Protección de
+              Datos y la Ley de
+              Protección de Datos Personales de Argentina (Ley 25.326),
+              garantizando la
+              transparencia y protección de derechos digitales.
+            </p>
+          </div>
+        </div>
+
+        <h2>1. Aceptación de los Términos</h2>
+        <p>
+          Al acceder y utilizar el sitio web <span
+            class="highlight">glastor.es</span> (en
+          adelante, "el Sitio"), propiedad de <span class="highlight">GLASTOR
+            S.L.</span> (en
+          adelante, "la Empresa"), con domicilio legal en 9 de Julio 614, Buenos
+          Aires, Argentina,
+          usted acepta estar legalmente obligado por estos Términos y
+          Condiciones, que constituyen
+          un contrato vinculante entre usted y GLASTOR.
+        </p>
+
+        <h2>2. Uso del Sitio</h2>
+        <p>
+          Usted se compromete a utilizar el Sitio únicamente con fines lícitos y
+          de acuerdo con
+          estos Términos. Prohibimos específicamente:
+        </p>
+        <ul>
+          <li>
+            Usar el Sitio de manera que pueda dañar, sobrecargar o deteriorar su
+            funcionamiento
+          </li>
+          <li>Intentar acceder a áreas restringidas sin autorización</li>
+          <li>Realizar actividades fraudulentas o que infrinjan derechos de
+            terceros</li>
+          <li>Recopilar datos de otros usuarios sin su consentimiento expreso
+          </li>
+          <li>Utilizar bots, crawlers u otros medios automatizados sin permiso
+          </li>
+        </ul>
+
+        <h2>3. Propiedad Intelectual</h2>
+        <p>
+          Todos los derechos de propiedad intelectual sobre los contenidos del
+          Sitio (incluyendo
+          textos, gráficos, logotipos, software) son propiedad exclusiva de
+          GLASTOR S.L. o de sus
+          licenciantes, protegidos por leyes argentinas e internacionales. Queda
+          estrictamente
+          prohibida cualquier reproducción, distribución o modificación sin
+          autorización expresa.
+        </p>
+
+        <h2>4. Compras y Pagos</h2>
+        <p>
+          Todas las compras realizadas a través de nuestro Sitio están sujetas a
+          disponibilidad y
+          confirmación del precio. Los precios están expresados en pesos
+          argentinos (ARS) e
+          incluyen todos los impuestos aplicables según la normativa vigente en
+          la República
+          Argentina.
+        </p>
+        <p>
+          GLASTOR se reserva el derecho de rechazar o cancelar pedidos que no
+          cumplan con nuestras
+          políticas o que presenten indicios de fraude.
+        </p>
+
+        <h2>5. Limitación de Responsabilidad</h2>
+        <p>En la máxima medida permitida por la ley, GLASTOR S.L. no será
+          responsable por:</p>
+        <ul>
+          <li>Daños directos, indirectos, incidentales, especiales o
+            consecuentes</li>
+          <li>Interrupciones del servicio por causas ajenas a nuestro control
+          </li>
+          <li>Errores u omisiones en el contenido del Sitio</li>
+          <li>Conducta de terceros en el Sitio</li>
+        </ul>
+
+        <h2>6. Modificaciones</h2>
+        <p>
+          Nos reservamos el derecho de modificar estos Términos en cualquier
+          momento. Las
+          actualizaciones entrarán en vigor inmediatamente después de su
+          publicación en el Sitio.
+          Su uso continuado constituye aceptación de los términos modificados.
+        </p>
+
+        <h2>7. Legislación Aplicable</h2>
+        <p>
+          Estos Términos se regirán e interpretarán de acuerdo con las leyes de
+          la República
+          Argentina. Cualquier controversia derivada de estos términos será
+          sometida a los
+          tribunales ordinarios de la Ciudad de Buenos Aires, renunciando
+          expresamente a cualquier
+          otro fuero o jurisdicción.
+        </p>
+      </div>
+    </section>
+
+    <!-- Política de Privacidad -->
+    <section id="privacy" class="legal-section">
+      <div class="section-header">
+        <h2 class="section-title">Política de Privacidad</h2>
+        <div class="last-updated">Última actualización: <span
+            id="privacyDate"></span></div>
+      </div>
+
+      <div class="section-content">
+        <div class="compliance-badge">
+          <div class="badge-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Protección de Datos Personales</h3>
+            <p>
+              Cumplimos con la RGPD y la Ley 25.326 de Protección de Datos
+              Personales de
+              Argentina, garantizando sus derechos digitales.
+            </p>
+          </div>
+        </div>
+
+        <h2>1. Responsable del Tratamiento</h2>
+        <p>
+          <strong>Identidad:</strong> GLASTOR S.L.<br />
+          <strong>CUIT:</strong> 23-25316566-9<br />
+          <strong>Dirección:</strong> 9 de Julio 614, Buenos Aires,
+          Argentina<br />
+          <strong>Email:</strong> glastor.info@gmail.com<br />
+          <strong>Delegado de Protección de Datos:</strong>
+          glastor.info@gmail.com
+        </p>
+
+        <h2>2. Información que Recopilamos</h2>
+        <p>Recopilamos y tratamos los siguientes tipos de datos personales:</p>
+        <ul>
+          <li>
+            <span class="highlight">Datos identificativos</span>: Nombre
+            completo, DNI, dirección
+            postal, fecha de nacimiento
+          </li>
+          <li>
+            <span class="highlight">Datos de contacto</span>: Email, teléfono,
+            dirección de
+            facturación y envío
+          </li>
+          <li>
+            <span class="highlight">Datos económicos y transaccionales</span>:
+            Historial de
+            compras, métodos de pago, información bancaria
+          </li>
+          <li>
+            <span class="highlight">Datos técnicos y de navegación</span>:
+            Dirección IP, tipo de
+            dispositivo, navegador, páginas visitadas, tiempos de acceso
+          </li>
+          <li>
+            <span class="highlight">Datos de preferencias</span>: Intereses,
+            preferencias de
+            compra, feedback
+          </li>
+        </ul>
+
+        <h2>3. Finalidades del Tratamiento</h2>
+        <p>Utilizamos sus datos personales para las siguientes finalidades:</p>
+        <ul>
+          <li>Gestionar su registro como usuario y mantener su cuenta</li>
+          <li>Procesar pedidos, pagos y envíos</li>
+          <li>Proporcionar soporte al cliente y gestionar garantías</li>
+          <li>Enviar comunicaciones comerciales (solo con consentimiento
+            explícito)</li>
+          <li>Mejorar nuestros productos, servicios y experiencia de usuario
+          </li>
+          <li>Cumplir con obligaciones legales y regulatorias</li>
+          <li>Prevenir fraudes y abusos</li>
+        </ul>
+
+        <h2>4. Bases Legales para el Tratamiento</h2>
+        <p>El tratamiento de sus datos se fundamenta en:</p>
+        <ul>
+          <li>
+            <strong>Ejecución de contrato</strong>: Para procesar sus pedidos y
+            prestar nuestros
+            servicios
+          </li>
+          <li><strong>Consentimiento</strong>: Para marketing directo y cookies
+            no esenciales</li>
+          <li>
+            <strong>Interés legítimo</strong>: Para mejorar nuestros servicios y
+            prevenir fraudes
+          </li>
+          <li>
+            <strong>Cumplimiento legal</strong>: Para obligaciones fiscales,
+            contables y
+            regulatorias
+          </li>
+        </ul>
+
+        <h2>5. Derechos ARCO-PD</h2>
+        <p>De acuerdo con la Ley 25.326 y RGPD, usted tiene derecho a:</p>
+        <ul>
+          <li>
+            <span class="highlight">Acceso</span>: Solicitar información sobre
+            sus datos tratados
+          </li>
+          <li>
+            <span class="highlight">Rectificación</span>: Corregir datos
+            inexactos o incompletos
+          </li>
+          <li>
+            <span class="highlight">Cancelación</span>: Solicitar la eliminación
+            de sus datos
+            cuando ya no sean necesarios
+          </li>
+          <li>
+            <span class="highlight">Oposición</span>: Oponerse a ciertos
+            tratamientos de datos
+          </li>
+          <li>
+            <span class="highlight">Portabilidad</span>: Recibir sus datos en
+            formato estructurado
+          </li>
+          <li>
+            <span class="highlight">Limitación</span>: Solicitar la limitación
+            del tratamiento en
+            ciertos casos
+          </li>
+          <li>
+            <span class="highlight">Revocación</span>: Retirar su consentimiento
+            en cualquier
+            momento
+          </li>
+        </ul>
+        <p>
+          Para ejercer estos derechos, contacte a nuestro Delegado de Protección
+          de Datos:
+          glastor.info@gmail.com. Tendremos un plazo máximo de 10 días hábiles
+          para responder a su
+          solicitud.
+        </p>
+
+        <h2>6. Transferencias Internacionales</h2>
+        <p>
+          Algunos de nuestros proveedores de servicios pueden estar ubicados
+          fuera de Argentina.
+          En estos casos, garantizamos que:
+        </p>
+        <ul>
+          <li>Las transferencias cumplen con los estándares de protección
+            adecuados</li>
+          <li>Se han suscrito cláusulas contractuales tipo aprobadas por la UE
+          </li>
+          <li>
+            Los destinatarios están adheridos a mecanismos de certificación como
+            Privacy Shield
+          </li>
+        </ul>
+
+        <h2>7. Seguridad de la Información</h2>
+        <p>Implementamos medidas técnicas y organizativas avanzadas para
+          proteger sus datos:</p>
+        <ul>
+          <li>Encriptación de datos en tránsito (TLS 1.2+) y en reposo</li>
+          <li>Control de accesos basado en roles y autenticación multifactor
+          </li>
+          <li>Monitorización continua y pruebas de penetración</li>
+          <li>Políticas de retención y destrucción segura de datos</li>
+          <li>Plan de continuidad del negocio y recuperación ante desastres</li>
+        </ul>
+
+        <h2>8. Conservación de Datos</h2>
+        <p>
+          Conservaremos sus datos personales durante el tiempo necesario para
+          cumplir con las
+          finalidades descritas, considerando:
+        </p>
+        <ul>
+          <li>Plazos legales de conservación (ej. facturas: 10 años)</li>
+          <li>Necesidad de resolver disputas o reclamaciones</li>
+          <li>Contratos activos o relaciones comerciales en curso</li>
+          <li>Consentimientos vigentes para marketing</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Aviso de Cookies -->
+    <section id="cookies" class="legal-section">
+      <div class="section-header">
+        <h2 class="section-title">Aviso de Cookies</h2>
+        <div class="last-updated">Última actualización: <span
+            id="cookiesDate"></span></div>
+      </div>
+
+      <div class="section-content">
+        <div class="compliance-badge">
+          <div class="badge-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Transparencia en el Uso de Cookies</h3>
+            <p>
+              Cumplimos con la RGPD y la Ley 25.326 en relación al uso de
+              tecnologías de
+              seguimiento.
+            </p>
+          </div>
+        </div>
+
+        <h2>1. ¿Qué son las Cookies?</h2>
+        <p>
+          Las cookies son pequeños archivos de texto que se almacenan en su
+          dispositivo cuando
+          visita nuestro sitio web. Estas nos ayudan a:
+        </p>
+        <ul>
+          <li>Garantizar el funcionamiento básico del sitio</li>
+          <li>Recordar sus preferencias y configuraciones</li>
+          <li>Analizar el uso del sitio para mejoras continuas</li>
+          <li>Mostrar publicidad relevante (solo con su consentimiento)</li>
+        </ul>
+
+        <h2>2. Tipos de Cookies que Utilizamos</h2>
+        <h3>2.1 Cookies Esenciales (Necesarias)</h3>
+        <p>Son imprescindibles para el funcionamiento básico:</p>
+        <ul>
+          <li><strong>SessionID</strong>: Mantiene su sesión de usuario activa
+          </li>
+          <li><strong>SecurityToken</strong>: Protege contra ataques CSRF</li>
+          <li><strong>Consentimiento</strong>: Almacena sus preferencias de
+            cookies</li>
+        </ul>
+
+        <h3>2.2 Cookies de Rendimiento y Análisis</h3>
+        <p>Nos ayudan a mejorar el sitio:</p>
+        <ul>
+          <li><strong>Google Analytics</strong>: Analiza tráfico y
+            comportamiento</li>
+          <li><strong>Hotjar</strong>: Graba sesiones para UX</li>
+          <li><strong>NewRelic</strong>: Monitoriza rendimiento técnico</li>
+        </ul>
+
+        <h3>2.3 Cookies de Funcionalidad</h3>
+        <p>Mejoran su experiencia:</p>
+        <ul>
+          <li><strong>LanguagePref</strong>: Recuerda su idioma preferido</li>
+          <li><strong>RegionSettings</strong>: Muestra contenido regionalizado
+          </li>
+          <li><strong>CartItems</strong>: Mantiene los productos en su carrito
+          </li>
+        </ul>
+
+        <h3>2.4 Cookies de Marketing</h3>
+        <p>Solo con su consentimiento explícito:</p>
+        <ul>
+          <li><strong>Facebook Pixel</strong>: Para publicidad en
+            Facebook/Instagram</li>
+          <li><strong>Google Ads</strong>: Seguimiento de conversiones</li>
+          <li><strong>LinkedIn Insight</strong>: Para publicidad en LinkedIn
+          </li>
+        </ul>
+
+        <h2>3. Gestión de Cookies</h2>
+        <p>Puede gestionar sus preferencias de cookies en cualquier momento:</p>
+        <div class="cookie-preferences"
+          style="background: var(--dark-700); padding: 20px; border-radius: 10px; margin: 20px 0">
+          <h3>Preferencias de Cookies Actuales</h3>
+          <p><strong>Cookies Esenciales:</strong> Siempre activas (obligatorias)
+          </p>
+          <div class="cookie-toggle">
+            <div>
+              <strong>Cookies de Rendimiento:</strong> <span
+                id="perfStatus">Activadas</span>
+            </div>
+            <button class="toggle-btn" data-type="performance" style="
+                  background: var(--dark-800);
+                  color: var(--gray-400);
+                  padding: 8px 16px;
+                  border-radius: 50px;
+                  font-weight: 600;
+                  border: 1px solid var(--border);
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                  font-size: 0.9rem;
+                ">
+              Cambiar
+            </button>
+          </div>
+          <div class="cookie-toggle" style="
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              ">
+            <div>
+              <strong>Cookies de Marketing:</strong>
+              <span id="marketingStatus">Desactivadas</span>
+            </div>
+            <button class="toggle-btn" data-type="marketing" style="
+                  background: var(--dark-800);
+                  color: var(--gray-400);
+                  padding: 8px 16px;
+                  border-radius: 50px;
+                  font-weight: 600;
+                  border: 1px solid var(--border);
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                  font-size: 0.9rem;
+                ">
+              Cambiar
+            </button>
+          </div>
+        </div>
+
+        <h2>4. Consentimiento</h2>
+        <p>
+          Nuestro sitio web solicita su consentimiento explícito antes de usar
+          cookies no esenciales, cumpliendo plenamente con el RGPD.
+          Puede retirar su consentimiento en cualquier momento:
+        </p>
+        <ul>
+          <li>Usando el botón de "Cookies" fijo en la esquina inferior izquierda
+            de la pantalla</li>
+          <li>Modificando la configuración de su navegador</li>
+          <li>Eliminando las cookies almacenadas</li>
+        </ul>
+
+        <h2>5. Registro del Consentimiento</h2>
+        <p>
+          En cumplimiento del RGPD, mantenemos un registro de cuándo y cómo ha
+          proporcionado su consentimiento,
+          incluyendo:
+        </p>
+        <ul>
+          <li>Fecha y hora exacta del consentimiento</li>
+          <li>Método utilizado (explícito, configuración)</li>
+          <li>Preferencias específicas seleccionadas</li>
+          <li>Historial completo de cambios en sus preferencias</li>
+        </ul>
+        <p>Puede acceder a este historial en cualquier momento desde el panel de
+          configuración de cookies.</p>
+
+        <h2>6. Violaciones de Datos</h2>
+        <p>
+          De acuerdo con el Artículo 33 del RGPD, en caso de una violación de
+          datos que afecte
+          a su información personal, seremos transparentes y le notificaremos
+          dentro de las 72 horas
+          siguientes a su detección, a través de los canales de contacto
+          disponibles.
+        </p>
+
+        <h2>7. Periodos de Conservación</h2>
+        <p>
+          Conservamos diferentes tipos de datos durante los siguientes periodos:
+        </p>
+        <ul>
+          <li><strong>Datos de cuenta:</strong> 5 años desde la última actividad
+          </li>
+          <li><strong>Datos de pedidos:</strong> 10 años (obligación legal)</li>
+          <li><strong>Datos de navegación:</strong> 12 meses</li>
+          <li><strong>Datos de marketing:</strong> 3 años o hasta la retirada
+            del consentimiento</li>
+          <li><strong>Cookies funcionales:</strong> 6 meses</li>
+          <li><strong>Cookies de marketing:</strong> 3 meses</li>
+        </ul>
+
+        <h2>8. Más Información</h2>
+        <p>
+          Para más detalles sobre cookies específicas, plazos de conservación y
+          proveedores, consulte nuestra
+          <a href="#" class="legal-link" data-section="privacy">Política de
+            Privacidad</a>
+          completa o póngase en contacto con nuestro Delegado de Protección de
+          Datos en
+          <a href="mailto:glastor.info@gmail.com">glastor.info@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Aviso Legal -->
+    <section id="legal" class="legal-section">
+      <div class="section-header">
+        <h2 class="section-title">Aviso Legal</h2>
+        <div class="last-updated">Última actualización: <span
+            id="legalDate"></span></div>
+      </div>
+
+      <div class="section-content">
+        <div class="compliance-badge">
+          <div class="badge-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div>
+            <h3>Información Legal Completa</h3>
+            <p>Cumplimos con todas las obligaciones legales de la República
+              Argentina.</p>
+          </div>
+        </div>
+
+        <h2>1. Identificación del Titular</h2>
+        <p><strong>Razón Social:</strong> GLASTOR S.L.</p>
+        <p><strong>Nombre Comercial:</strong> GLASTOR</p>
+        <p><strong>Domicilio Legal:</strong> 9 de Julio 614, C1806 Buenos Aires,
+          Argentina</p>
+        <p><strong>CUIT:</strong> 23-25316566-9</p>
+        <p><strong>Inscripción:</strong> IGJ N° 12345678</p>
+        <p>
+          <strong>Actividad:</strong> Distribución de materiales eléctricos y
+          ferretería
+          industrial
+        </p>
+        <p><strong>Email:</strong> glastor.info@gmail.com</p>
+        <p><strong>Teléfono:</strong> +54 11 3257-8591</p>
+
+        <h2>2. Condiciones de Uso</h2>
+        <p>
+          El acceso y uso de este sitio web atribuye la condición de usuario e
+          implica la
+          aceptación plena y sin reservas de todas las disposiciones incluidas
+          en este Aviso
+          Legal.
+        </p>
+
+        <h2>3. Propiedad Intelectual e Industrial</h2>
+        <p>
+          Todos los contenidos de este sitio web (textos, imágenes, marcas,
+          logotipos, archivos de
+          audio, software) son propiedad de GLASTOR S.L. o de sus licenciantes y
+          están protegidos
+          por las leyes argentinas e internacionales de propiedad intelectual.
+        </p>
+        <p>
+          Queda expresamente prohibida la reproducción, distribución,
+          comunicación pública o
+          transformación sin autorización expresa.
+        </p>
+
+        <h2>4. Exclusión de Garantías y Responsabilidad</h2>
+        <p>
+          GLASTOR S.L. no garantiza la disponibilidad y continuidad del
+          funcionamiento del sitio
+          web. Excluye cualquier responsabilidad por los daños y perjuicios de
+          cualquier
+          naturaleza que puedan deberse a:
+        </p>
+        <ul>
+          <li>Interrupciones del servicio, fallos técnicos o mantenimiento
+            programado</li>
+          <li>Falta de utilidad o veracidad de los contenidos</li>
+          <li>Existencia de virus o programas maliciosos</li>
+          <li>Uso ilícito o negligente por parte de los usuarios</li>
+        </ul>
+
+        <h2>5. Enlaces a Terceros</h2>
+        <p>
+          Este sitio puede contener enlaces a sitios web de terceros. GLASTOR
+          S.L. no asume
+          responsabilidad por el contenido, veracidad o prácticas de privacidad
+          de estos sitios
+          externos.
+        </p>
+
+        <h2>6. Legislación Aplicable y Jurisdicción</h2>
+        <p>
+          Este aviso legal se rige por la legislación de la República Argentina.
+          Para la
+          resolución de cualquier controversia, las partes se someten
+          expresamente a los
+          tribunales competentes de la Ciudad Autónoma de Buenos Aires, con
+          renuncia a cualquier
+          otro fuero o jurisdicción que pudiera corresponderles.
+        </p>
+
+        <h2>7. Modificaciones</h2>
+        <p>
+          GLASTOR S.L. se reserva el derecho a modificar este aviso legal en
+          cualquier momento
+          para adaptarlo a novedades legislativas o cambios en sus actividades.
+          Las modificaciones
+          entrarán en vigor a partir de su publicación en el sitio web.
+        </p>
+
+        <h2>8. Protección de Datos</h2>
+        <p>
+          Para información detallada sobre el tratamiento de datos personales,
+          consulte nuestra
+          <a href="#" class="legal-link" data-section="privacy">Política de
+            Privacidad</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>GLASTOR</h3>
+          <p>
+            Líderes en distribución de materiales eléctricos y soluciones
+            técnicas para proyectos
+            industriales, comerciales y residenciales.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Documentos Legales</h3>
+          <a href="#" class="legal-link" data-section="terms">Términos y
+            Condiciones</a>
+          <a href="#" class="legal-link" data-section="privacy">Política de
+            Privacidad</a>
+          <a href="#" class="legal-link" data-section="cookies">Aviso de
+            Cookies</a>
+          <a href="#" class="legal-link" data-section="legal">Aviso Legal</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <a href="mailto:glastor.info@gmail.com">glastor.info@gmail.com</a>
+          <a href="tel:+541132578591">+54 11 3257-8591</a>
+          <p>9 de Julio 614, Buenos Aires</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Delegado de Protección de Datos</h3>
+          <a href="mailto:glastor.info@gmail.com">glastor.info@gmail.com</a>
+          <p>Responsable del cumplimiento RGPD y Ley 25.326 de Protección de
+            Datos</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          &copy; <span id="currentYear">2023</span> GLASTOR. Todos los derechos
+          reservados. CUIT
+          23-25316566-9 | Versión 2.1.7
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <div class="scroll-top" id="scrollTop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </div>
+
+  <script>
+    // Sistema de notificaciones global
+    let notificationSystem;
+
+    // Verificar si el documento está completamente cargado
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        // Inicializar sistema de notificaciones
+        initNotificationSystem();
+
+        // Inicializar componentes
+        initDateUpdates();
+        initSectionSwitching();
+        initCookieToggles();
+        initScrollToTop();
+      } catch (error) {
+        console.error('Error al inicializar la página:', error);
+      }
+    });
+
+    // Función para inicializar el sistema de notificaciones
+    function initNotificationSystem() {
+      try {
+        // Eliminar notificación existente si la hay
+        const existingNotification = document.getElementById('notification-system');
+        if (existingNotification) {
+          existingNotification.remove();
+        }
+
+        notificationSystem = document.createElement('div');
+        notificationSystem.id = 'notification-system';
+        notificationSystem.setAttribute('role', 'alert');
+        notificationSystem.style.position = 'fixed';
+        notificationSystem.style.bottom = '20px';
+        notificationSystem.style.left = '20px';
+        notificationSystem.style.background = 'var(--notification-bg)';
+        notificationSystem.style.color = 'var(--notification-text)';
+        notificationSystem.style.padding = '10px 20px';
+        notificationSystem.style.borderRadius = '4px';
+        notificationSystem.style.zIndex = '1000';
+        notificationSystem.style.opacity = '0';
+        notificationSystem.style.transition = 'opacity 0.3s ease';
+        notificationSystem.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+        document.body.appendChild(notificationSystem);
+
+        // Función global para mostrar notificaciones
+        window.showNotification = function (message, duration = 3000) {
+          notificationSystem.textContent = message;
+          notificationSystem.style.opacity = '1';
+
+          // Accesibilidad: asegurar que los lectores de pantalla anuncien la notificación
+          notificationSystem.setAttribute('aria-live', 'assertive');
+
+          // Limpiar cualquier temporizador existente
+          if (window.notificationTimer) {
+            clearTimeout(window.notificationTimer);
+          }
+
+          window.notificationTimer = setTimeout(() => {
+            notificationSystem.style.opacity = '0';
+            // Restaurar aria-live después de la animación
+            setTimeout(() => {
+              notificationSystem.setAttribute('aria-live', 'off');
+            }, 300);
+          }, duration);
+        };
+      } catch (error) {
+        console.error('Error al inicializar el sistema de notificaciones:', error);
+      }
+    }
+
+    // Set current dates with fallback for browsers that don't support toLocaleDateString
+    let currentDate;
+    try {
+      currentDate = new Date().toLocaleDateString('es-AR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    } catch (e) {
+      // Fallback simple date format
+      const date = new Date();
+      const months = [
+        'enero',
+        'febrero',
+        'marzo',
+        'abril',
+        'mayo',
+        'junio',
+        'julio',
+        'agosto',
+        'septiembre',
+        'octubre',
+        'noviembre',
+        'diciembre',
+      ];
+      currentDate = `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`;
+    }
+
+    // Función para inicializar actualizaciones de fecha
+    function initDateUpdates() {
+      try {
+        // Actualizar año de copyright
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+          currentYearElement.textContent = new Date().getFullYear();
+        }
+
+        // Actualizar fechas de documentos legales
+        const dateElements = ['termsDate', 'privacyDate', 'cookiesDate', 'legalDate'];
+        dateElements.forEach((id) => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.textContent = currentDate;
+          }
+        });
+      } catch (error) {
+        console.error('Error al actualizar fechas:', error);
+      }
+    }
+
+    // Inicialización de componentes manejada por DOMContentLoaded
+
+    // Función para inicializar la navegación entre secciones
+    function initSectionSwitching() {
+      try {
+        const navBtns = document.querySelectorAll('.nav-btn, .legal-link');
+        const sections = document.querySelectorAll('.legal-section');
+
+        // Función para cambiar de sección
+        function switchSection(sectionId) {
+          try {
+            // Update active button
+            document.querySelectorAll('.nav-btn').forEach((b) => b.classList.remove('active'));
+            document.querySelectorAll(`.nav-btn[data-section="${sectionId}"]`).forEach((btn) => {
+              if (btn.classList.contains('nav-btn')) {
+                btn.classList.add('active');
+              }
+            });
+
+            // Hide all sections
+            sections.forEach((section) => {
+              section.classList.remove('active');
+            });
+
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+              targetSection.classList.add('active');
+
+              // Scroll to top
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              });
+
+              // Actualizar URL con hash para permitir enlace directo
+              if (window.location.hash !== `#${sectionId}`) {
+                history.pushState(null, null, `#${sectionId}`);
+              }
+
+              // Actualizar título de la página
+              const titleElement = targetSection.querySelector('.section-title');
+              if (titleElement) {
+                document.title = `${titleElement.textContent} | GLASTOR`;
+              }
+
+              // Registrar cambio de sección para análisis (si existe)
+              if (typeof gtag === 'function') {
+                gtag('event', 'view_section', {
+                  section_name: sectionId,
+                });
+              }
+            } else {
+              console.warn(`Sección no encontrada: ${sectionId}`);
+            }
+          } catch (error) {
+            console.error('Error al cambiar de sección:', error);
+          }
+        }
+
+        navBtns.forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = btn.getAttribute('data-section');
+            if (sectionId) {
+              switchSection(sectionId);
+            }
+          });
+        });
+
+        // Manejar navegación por hash en URL
+        if (window.location.hash) {
+          const sectionId = window.location.hash.substring(1);
+          if (sectionId && document.getElementById(sectionId)) {
+            switchSection(sectionId);
+          }
+        }
+
+        // Manejar cambios en el historial del navegador
+        window.addEventListener('popstate', () => {
+          const sectionId = window.location.hash.substring(1) || 'terms'; // Default to terms if no hash
+          if (document.getElementById(sectionId)) {
+            switchSection(sectionId);
+          }
+        });
+      } catch (error) {
+        console.error('Error al inicializar la navegación:', error);
+      }
+    }
+
+    // Inicialización de cookies manejada por DOMContentLoaded
+
+    // Función para inicializar los toggles de cookies
+    function initCookieToggles() {
+      try {
+        const toggleBtns = document.querySelectorAll('.toggle-btn');
+
+        // Guardar preferencias en localStorage
+        function saveCookiePreferences(type, enabled) {
+          try {
+            localStorage.setItem(`cookie_${type}`, enabled ? 'enabled' : 'disabled');
+          } catch (e) {
+            console.warn('No se pudo guardar preferencia en localStorage:', e);
+          }
+        }
+
+        // Cargar preferencias guardadas
+        function loadCookiePreferences() {
+          try {
+            toggleBtns.forEach((btn) => {
+              const type = btn.getAttribute('data-type');
+              const statusElement = document.getElementById(`${type}Status`);
+              const savedPref = localStorage.getItem(`cookie_${type}`);
+
+              if (savedPref) {
+                if (savedPref === 'enabled') {
+                  statusElement.textContent = 'Activadas';
+                  btn.textContent = 'Desactivar';
+                } else {
+                  statusElement.textContent = 'Desactivadas';
+                  btn.textContent = 'Activar';
+                }
+              }
+            });
+          } catch (e) {
+            console.warn('No se pudieron cargar preferencias:', e);
+          }
+        }
+
+        // Cargar preferencias al inicio
+        loadCookiePreferences();
+
+        toggleBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const type = btn.getAttribute('data-type');
+            const statusElement = document.getElementById(`${type}Status`);
+            const isEnabled = statusElement.textContent === 'Activadas';
+
+            // Cambiar estado
+            if (isEnabled) {
+              statusElement.textContent = 'Desactivadas';
+              btn.textContent = 'Activar';
+              saveCookiePreferences(type, false);
+            } else {
+              statusElement.textContent = 'Activadas';
+              btn.textContent = 'Desactivar';
+              saveCookiePreferences(type, true);
+            }
+
+            // Mostrar notificación
+            window.showNotification(
+              `Las cookies de ${type === 'performance' ? 'rendimiento' : 'marketing'
+              } han sido ${statusElement.textContent.toLowerCase()}`,
+            );
+          });
+        });
+      } catch (error) {
+        console.error('Error al inicializar los toggles de cookies:', error);
+      }
+    }
+
+    // Scroll to top manejado por DOMContentLoaded
+
+    // Función para inicializar el botón de scroll to top
+    function initScrollToTop() {
+      try {
+        const scrollTopBtn = document.getElementById('scrollTop');
+        if (!scrollTopBtn) return;
+
+        // Usar throttle para mejorar el rendimiento del evento scroll
+        let scrollTimeout;
+        let lastScrollPosition = 0;
+
+        // Función para verificar si se debe mostrar el botón
+        const checkScrollPosition = () => {
+          const currentPosition = window.pageYOffset;
+          // Solo actualizar si hay un cambio significativo en la posición
+          if (Math.abs(currentPosition - lastScrollPosition) > 50) {
+            lastScrollPosition = currentPosition;
+            if (currentPosition > 300) {
+              scrollTopBtn.classList.add('visible');
+            } else {
+              scrollTopBtn.classList.remove('visible');
+            }
+          }
+        };
+
+        // Evento de scroll con throttling
+        window.addEventListener('scroll', () => {
+          if (!scrollTimeout) {
+            scrollTimeout = setTimeout(() => {
+              scrollTimeout = null;
+              checkScrollPosition();
+            }, 100);
+          }
+        });
+
+        // Evento de clic
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        });
+
+        // Verificar posición inicial después de que el contenido se haya cargado
+        setTimeout(checkScrollPosition, 100);
+      } catch (error) {
+        console.error('Error al inicializar el botón de scroll:', error);
+      }
+    }
+  </script>
+</body>
+
+</html>
