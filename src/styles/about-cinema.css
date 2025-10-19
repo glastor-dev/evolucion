@@ -1,0 +1,365 @@
+/* About Cinema Styles - Diseño cinematográfico profesional */
+
+/* Optimizaciones de rendimiento */
+.about-cinema * {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Fondo animado con partículas */
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-15px) rotate(240deg);
+    opacity: 0.7;
+  }
+}
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, #4fc08d 0%, transparent 70%);
+  border-radius: 50%;
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+/* Efectos de texto cinematográfico */
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px rgba(79, 192, 141, 0.3),
+      0 0 10px rgba(79, 192, 141, 0.2),
+      0 0 15px rgba(79, 192, 141, 0.1);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(79, 192, 141, 0.5),
+      0 0 20px rgba(79, 192, 141, 0.3),
+      0 0 30px rgba(79, 192, 141, 0.2);
+  }
+}
+
+.hero-title {
+  animation: textGlow 3s ease-in-out infinite;
+  background: linear-gradient(45deg, #4fc08d, #ffffff, #42b883);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    textGlow 3s ease-in-out infinite,
+    gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Efectos de glassmorphism mejorados */
+.glass-card {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 192, 141, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(79, 192, 141, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(79, 192, 141, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Efectos de brillo cinematográfico */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 192, 141, 0.1) 30%,
+    rgba(79, 192, 141, 0.3) 50%,
+    rgba(79, 192, 141, 0.1) 70%,
+    transparent
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  transition: transform 0.6s ease;
+}
+
+.shimmer-effect:hover::before {
+  animation: shimmer 1s ease-out;
+}
+
+/* Animaciones de contador */
+@keyframes counterPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    color: #4fc08d;
+  }
+  50% {
+    transform: scale(1.05);
+    color: #42b883;
+  }
+}
+
+.counter-animate {
+  animation: counterPulse 2s ease-in-out infinite;
+}
+
+/* Timeline cinematográfica */
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #4fc08d 10%,
+    #42b883 50%,
+    #4fc08d 90%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4fc08d, #42b883);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(79, 192, 141, 0.5);
+}
+
+/* Puntos del timeline */
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #42b883, #4fc08d);
+  border: 4px solid #000;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+  box-shadow:
+    0 0 10px rgba(79, 192, 141, 0.5),
+    0 0 20px rgba(79, 192, 141, 0.3);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(79, 192, 141, 0.5),
+      0 0 20px rgba(79, 192, 141, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 15px rgba(79, 192, 141, 0.7),
+      0 0 30px rgba(79, 192, 141, 0.5);
+  }
+}
+
+/* Efectos de hover avanzados */
+.card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Gradient buttons cinematográficos */
+.cta-button {
+  background: linear-gradient(45deg, #42b883, #4fc08d);
+  color: #000;
+  font-weight: bold;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 192, 141, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 192, 141, 0.4);
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive cinematográfico */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .glass-card {
+    backdrop-filter: blur(15px);
+  }
+
+  .particle {
+    width: 1px;
+    height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Optimizaciones de performance */
+@media (prefers-reduced-motion: reduce) {
+  .particle,
+  .hero-title,
+  .counter-animate,
+  .timeline-dot {
+    animation: none;
+  }
+
+  .glass-card,
+  .shimmer-effect,
+  .cta-button {
+    transition: none;
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Indicador de scroll */
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(90deg);
+  }
+}
+
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+  color: #4fc08d;
+}
+
+/* Loading states */
+@keyframes skeletonPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1e293b, #334155, #1e293b);
+  background-size: 200% 100%;
+  animation: skeletonPulse 2s ease-in-out infinite;
+}
+
+/* Efectos de video modal */
+.video-modal {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.video-container {
+  background: #1e293b;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark theme optimizations */
+.dark-theme {
+  color-scheme: dark;
+}
+
+.dark-theme .glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(79, 192, 141, 0.2);
+}
+
+.dark-theme .cta-button {
+  box-shadow: 0 4px 15px rgba(79, 192, 141, 0.4);
+}

@@ -5,7 +5,9 @@ module.exports = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.css",
+    "./index.html"
   ],
   theme: {
     container: {
@@ -50,6 +52,26 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        vue: {
+          primary: "hsl(var(--vue-primary))",
+          secondary: "hsl(var(--vue-secondary))",
+          dark: "hsl(var(--vue-dark))",
+          light: "hsl(var(--vue-light))",
+        },
+      },
+      backgroundImage: {
+        'vue-gradient': 'linear-gradient(135deg, hsl(var(--vue-secondary)) 0%, hsl(var(--vue-primary)) 100%)',
+        'vue-gradient-dark': 'linear-gradient(135deg, hsl(var(--vue-dark)) 0%, hsl(var(--vue-secondary)) 100%)',
+        'vue-gradient-hero': 'linear-gradient(135deg, hsl(var(--vue-primary)) 0%, hsl(var(--vue-light)) 100%)',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'display': ['Inter', 'sans-serif'],
+        'heading': ['Inter', 'sans-serif'],
+        'body': ['Inter', 'sans-serif'],
+        'accent': ['Inter', 'sans-serif'],
+        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,5 +94,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

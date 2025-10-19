@@ -1,0 +1,109 @@
+/* Product Cards Cinema CSS */
+/* Estilos cinematográficos para las tarjetas de productos */
+
+.product-card-cinema {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid rgba(79, 192, 141, 0.2);
+  transition: all 0.3s ease;
+}
+
+.product-card-cinema:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(79, 192, 141, 0.3);
+  border-color: rgba(79, 192, 141, 0.5);
+}
+
+.product-card-cinema .card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(79, 192, 141, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-cinema:hover .card-glow {
+  opacity: 1;
+}
+
+.product-card-cinema .card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+.product-card-cinema .product-image {
+  transition: transform 0.3s ease;
+}
+
+.product-card-cinema:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-card-cinema .price-gradient {
+  background: linear-gradient(135deg, #4FC08D 0%, #42B883 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-card-cinema .badge {
+  background: linear-gradient(135deg, #4FC08D 0%, #42B883 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-card-cinema .favorite-btn {
+  transition: all 0.2s ease;
+}
+
+.product-card-cinema .favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+.product-card-cinema .favorite-btn.active {
+  color: #ef4444;
+}
+
+.product-card-cinema .add-to-cart-btn {
+  background: linear-gradient(135deg, #4FC08D 0%, #42B883 100%);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card-cinema .add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(79, 192, 141, 0.4);
+}
+
+/* Animaciones de partículas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.particle {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-card-cinema .card-content {
+    padding: 1rem;
+  }
+}

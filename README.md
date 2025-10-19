@@ -32,6 +32,30 @@ Build your React landing page effortlessly with the required sections to your pr
 - [x] Dark Mode
 - [x] Meta tags
 
+## Configuración de Firebase (Login con Google)
+
+Para habilitar el inicio de sesión con Google en local:
+
+1) Crea `.env.local` en la raíz del proyecto `glastor/` con tus credenciales de Firebase:
+
+```bash
+VITE_FIREBASE_API_KEY=tuApiKey
+VITE_FIREBASE_AUTH_DOMAIN=tuProyecto.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=tuProyectoId
+VITE_FIREBASE_APP_ID=1:XXXXXXXXX:web:YYYYYYYYYYYY
+```
+
+2) En Firebase Console → Authentication → Sign-in method: habilita Google.
+
+3) En Firebase Console → Authentication → Settings → Authorized domains: agrega `localhost`.
+
+4) Reinicia el servidor de Vite después de guardar `.env.local`.
+
+Notas:
+- Si el navegador bloquea el popup, la app usa `signInWithRedirect` como fallback.
+- Si ves un toast con “Dominio no autorizado”, asegúrate de agregar `localhost`.
+- Si ves “verifica tus variables VITE_FIREBASE_*”, revisa `.env.local` y reinicia.
+
 ## How to install
 
 1. Clone this repository:

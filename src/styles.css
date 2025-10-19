@@ -1,0 +1,8 @@
+/* Import base styles */
+@import "@/App.css";
+@import "@/index.css";
+
+/* Import component styles */
+@import "@/styles/cinema-system.css";
+@import "@/components/footer-cinema.css";
+@import "@/components/whatsapp-cinema.css";

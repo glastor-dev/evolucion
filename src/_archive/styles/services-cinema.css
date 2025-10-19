@@ -1,0 +1,442 @@
+/* Services Cinema Styles - Diseño cinematográfico para servicios */
+
+/* Optimizaciones de performance */
+.services-cinema * {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Animaciones de partículas para servicios */
+@keyframes serviceParticleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-40px) rotate(90deg) scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg) scale(0.8);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(-35px) rotate(270deg) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.service-particle {
+  animation: serviceParticleFloat 5s ease-in-out infinite;
+}
+
+/* Grid tecnológico animado */
+@keyframes gridPulse {
+  0%,
+  100% {
+    opacity: 0.05;
+    background-size: 50px 50px;
+  }
+  50% {
+    opacity: 0.15;
+    background-size: 55px 55px;
+  }
+}
+
+.tech-grid {
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+/* Efectos de texto para servicios */
+@keyframes serviceTextGlow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px rgba(79, 192, 141, 0.3),
+      0 0 20px rgba(79, 192, 141, 0.2),
+      0 0 30px rgba(79, 192, 141, 0.1);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(79, 192, 141, 0.5),
+      0 0 30px rgba(79, 192, 141, 0.3),
+      0 0 45px rgba(79, 192, 141, 0.2);
+  }
+}
+
+.service-title-glow {
+  animation: serviceTextGlow 4s ease-in-out infinite;
+}
+
+/* Tabs de servicios con efectos */
+.service-tab {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 192, 141, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-tab:hover::before {
+  left: 100%;
+}
+
+.service-tab.active {
+  background: linear-gradient(45deg, #42b883, #4fc08d);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(79, 192, 141, 0.3);
+}
+
+/* Efectos de tarjetas de servicios */
+.service-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 192, 141, 0.1);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.service-card:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(79, 192, 141, 0.3);
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(79, 192, 141, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Efectos de imagen de servicio */
+.service-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.service-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(79, 192, 141, 0.1) 25%,
+    rgba(66, 184, 131, 0.2) 50%,
+    rgba(79, 192, 141, 0.1) 75%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-image-container:hover .service-image-overlay {
+  opacity: 1;
+}
+
+/* Efectos de proceso de trabajo */
+.process-step {
+  position: relative;
+  perspective: 1000px;
+}
+
+.process-step-card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step:hover .process-step-card {
+  transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+}
+
+/* Línea de conexión entre pasos */
+.process-connection {
+  position: relative;
+}
+
+.process-connection::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4fc08d, transparent);
+  transform: translateY(-50%);
+  opacity: 0.3;
+}
+
+.process-connection:last-child::after {
+  display: none;
+}
+
+/* Efectos de testimonios */
+.testimonial-card {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(79, 192, 141, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4fc08d, #42b883, #4fc08d);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.testimonial-card:hover::before {
+  opacity: 0.3;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(79, 192, 141, 0.3);
+}
+
+/* Animaciones de FAQ */
+.faq-item {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 192, 141, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(79, 192, 141, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.faq-answer {
+  background: linear-gradient(to bottom, rgba(79, 192, 141, 0.05), transparent);
+  border-top: 1px solid rgba(79, 192, 141, 0.1);
+}
+
+/* Efectos de precios */
+.pricing-badge {
+  background: linear-gradient(45deg, rgba(79, 192, 141, 0.2), rgba(66, 184, 131, 0.3));
+  border: 1px solid rgba(79, 192, 141, 0.3);
+  backdrop-filter: blur(10px);
+  animation: pricingPulse 3s ease-in-out infinite;
+}
+
+@keyframes pricingPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(79, 192, 141, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(79, 192, 141, 0.4);
+  }
+}
+
+/* Botones CTA cinematográficos */
+.cta-service-button {
+  background: linear-gradient(45deg, #42b883, #4fc08d);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(79, 192, 141, 0.3);
+}
+
+.cta-service-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(79, 192, 141, 0.5);
+}
+
+.cta-service-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.cta-service-button:hover::before {
+  left: 100%;
+}
+
+/* Efectos de tecnología */
+.tech-badge {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(79, 192, 141, 0.2);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: rgba(79, 192, 141, 0.1);
+  border-color: rgba(79, 192, 141, 0.4);
+  color: #4fc08d;
+  transform: scale(1.05);
+}
+
+/* Video modal cinematográfico */
+.video-modal-backdrop {
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.video-modal-container {
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(79, 192, 141, 0.1);
+}
+
+/* Scroll smooth para navegación */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efectos de icono de servicio */
+.service-icon-container {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+  border: 1px solid rgba(79, 192, 141, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-icon-container:hover {
+  background: linear-gradient(135deg, rgba(79, 192, 141, 0.1), rgba(66, 184, 131, 0.05));
+  border-color: rgba(79, 192, 141, 0.4);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(79, 192, 141, 0.2);
+}
+
+/* Responsive optimizations */
+@media (max-width: 768px) {
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .process-step:hover .process-step-card {
+    transform: translateY(-10px);
+  }
+
+  .service-icon-container:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-title-glow {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .cta-service-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .service-particle {
+    animation-duration: 6s;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .service-particle,
+  .service-title-glow,
+  .pricing-badge,
+  .tech-grid {
+    animation: none;
+  }
+
+  .service-card,
+  .testimonial-card,
+  .process-step-card,
+  .cta-service-button {
+    transition: none;
+  }
+
+  .service-card:hover,
+  .process-step:hover .process-step-card {
+    transform: none;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .service-card {
+    border-color: rgba(79, 192, 141, 0.5);
+  }
+
+  .service-card:hover {
+    border-color: rgba(79, 192, 141, 0.8);
+  }
+
+  .tech-badge {
+    border-color: rgba(79, 192, 141, 0.4);
+  }
+}
+
+/* Dark theme enhancements */
+.dark-theme .service-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(79, 192, 141, 0.2);
+}
+
+.dark-theme .testimonial-card {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(79, 192, 141, 0.15);
+}
+
+.dark-theme .faq-item {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(79, 192, 141, 0.15);
+}
+
+/* Loading states for services */
+.service-skeleton {
+  background: linear-gradient(90deg, #1e293b, #334155, #1e293b);
+  background-size: 200% 100%;
+  animation: serviceSkeleton 2s ease-in-out infinite;
+  border-radius: 16px;
+}
+
+@keyframes serviceSkeleton {
+  0%,
+  100% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+}

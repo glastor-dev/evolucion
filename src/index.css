@@ -1,5 +1,33 @@
+/* Base styles and utilities */
+@import './styles/responsive-optimized.css';
+
+/* Custom styles */
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Safe area para dispositivos móviles (notch, gestos, etc.) */
+@supports (padding: max(0px)) {
+  .safe-area-inset-bottom {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-area-inset-top {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+}
+
+/* Evitar scroll cuando el menú móvil está abierto */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Espaciado adicional en el bottom para la navegación inferior en móviles */
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 5rem;
+  }
 }
 
 /* HeroCards background shadow */
@@ -45,6 +73,87 @@ html {
   }
 }
 
+/* Estilos para el componente de cookies mejorado */
+.cookie-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cookie-toggle-switch {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cookie-toggle-switch:focus {
+  outline: 2px solid #4FC08D;
+  outline-offset: 2px;
+}
+
+/* Animaciones para la barra de cookies */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efectos de hover para botones de cookies */
+.cookie-button-glow {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cookie-button-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 192, 141, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cookie-button-glow:hover::before {
+  left: 100%;
+}
+
+/* Accesibilidad mejorada */
+.cookie-focus-visible:focus-visible {
+  outline: 2px solid #4FC08D;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Botón flotante de configuración */
+.cookie-settings-floating {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 @media (max-width: 768px) {
   .shadow {
     top: 70px;
@@ -63,4 +172,76 @@ html {
       right: 100px;
     }
   }
+}
+
+/* Estilos personalizados para scroll del modal */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #1f2937;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Scroll suave para el modal */
+.modal-scroll {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
+/* Indicadores visuales para scroll */
+.scroll-indicator {
+  position: relative;
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator.scrolled-top::before {
+  opacity: 1;
+}
+
+.scroll-indicator.scrolled-bottom::after {
+  opacity: 1;
 }

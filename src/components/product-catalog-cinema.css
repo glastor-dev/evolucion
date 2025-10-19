@@ -1,0 +1,534 @@
+/* Product Catalog Cinema - Diseño cinematográfico para catálogo */
+
+/* Contenedor principal del catálogo */
+.catalog-cinema {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #0f0f0f 25%,
+    #1a1a1a 50%,
+    #0f0f0f 75%,
+    #000000 100%
+  );
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Efectos de fondo cinematográfico para el catálogo */
+.catalog-cinema::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(79, 192, 141, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(66, 184, 131, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(79, 192, 141, 0.03) 0%, transparent 70%);
+  z-index: 1;
+  animation: catalogPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes catalogPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Grid tecnológico de fondo */
+.catalog-cinema::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(79, 192, 141, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 192, 141, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: catalogGridMove 30s linear infinite;
+  z-index: 1;
+}
+
+@keyframes catalogGridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* Tarjeta de producto cinematográfica del catálogo */
+.product-card-cinema-catalog {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.9) 0%,
+    rgba(30, 41, 59, 0.8) 50%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(79, 192, 141, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card-cinema-catalog:hover {
+  border-color: rgba(79, 192, 141, 0.4);
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(79, 192, 141, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Efectos de partículas para cada tarjeta */
+.product-card-cinema-catalog::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(79, 192, 141, 0.05) 0%,
+    rgba(66, 184, 131, 0.03) 30%,
+    transparent 70%
+  );
+  animation: cardRotate 25s linear infinite;
+  z-index: 1;
+}
+
+@keyframes cardRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efectos de brillo móvil para las tarjetas */
+.product-card-cinema-catalog::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 192, 141, 0.1), transparent);
+  transform: skewX(-20deg);
+  transition: left 1s ease;
+  z-index: 2;
+}
+
+.product-card-cinema-catalog:hover::after {
+  left: 100%;
+}
+
+/* Animaciones de entrada para el catálogo */
+.catalog-cinema .container > * {
+  animation: catalogFadeInUp 0.8s ease forwards;
+}
+
+@keyframes catalogFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efectos para la barra de búsqueda cinematográfica */
+.catalog-search-container {
+  position: relative;
+}
+
+.catalog-search-container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #42b883, #4fc08d, #42b883);
+  border-radius: 24px;
+  opacity: 0;
+  animation: searchGlow 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes searchGlow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.catalog-search-input {
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 192, 141, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.catalog-search-input:focus {
+  border-color: rgba(79, 192, 141, 0.6);
+  box-shadow: 0 0 30px rgba(79, 192, 141, 0.2);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+/* Botones de filtro cinematográficos */
+.catalog-filter-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(203, 213, 225, 1);
+  transition: all 0.3s ease;
+}
+
+.catalog-filter-button:hover {
+  border-color: rgba(79, 192, 141, 0.5);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(79, 192, 141, 0.2);
+}
+
+.catalog-filter-button.active {
+  background: linear-gradient(45deg, #42b883, #4fc08d);
+  border-color: transparent;
+  color: black;
+  font-weight: 600;
+}
+
+.catalog-filter-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.catalog-filter-button:hover::before {
+  left: 100%;
+}
+
+/* Efectos para las estadísticas del header */
+.catalog-stats {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.catalog-stats:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  border-color: rgba(79, 192, 141, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones para los iconos de stats */
+.catalog-stats-icon {
+  animation: statsFloat 3s ease-in-out infinite;
+}
+
+@keyframes statsFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Efectos de loading para el catálogo */
+.catalog-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.catalog-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(79, 192, 141, 0.3);
+  border-top: 3px solid #4fc08d;
+  border-radius: 50%;
+  animation: catalogSpin 1s linear infinite;
+}
+
+@keyframes catalogSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efectos para el botón "Cargar más" */
+.catalog-load-more {
+  position: relative;
+  background: linear-gradient(45deg, #42b883, #4fc08d, #42b883);
+  background-size: 200% 200%;
+  animation: catalogButtonGradient 4s ease infinite;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  padding: 16px 32px;
+  box-shadow:
+    0 8px 30px rgba(66, 184, 131, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+@keyframes catalogButtonGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.catalog-load-more:hover {
+  box-shadow:
+    0 15px 50px rgba(66, 184, 131, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.catalog-load-more::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.catalog-load-more:hover::before {
+  left: 100%;
+}
+
+/* Efectos de transición para el cambio de productos */
+.catalog-transition-enter {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+}
+
+.catalog-transition-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.5s ease;
+}
+
+.catalog-transition-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.catalog-transition-exit-active {
+  opacity: 0;
+  transform: scale(0.8) translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+/* Efectos de hover para las imágenes de productos */
+.catalog-product-image {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.catalog-product-image:hover {
+  filter: brightness(1.1) contrast(1.2) saturate(1.2);
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Efectos de badges cinematográficos en el catálogo */
+.catalog-badge {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, var(--badge-color-1), var(--badge-color-2));
+  background-size: 200% 200%;
+  animation: catalogBadgeShine 3s ease-in-out infinite;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+@keyframes catalogBadgeShine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.catalog-badge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: catalogBadgeSlide 2.5s infinite;
+}
+
+@keyframes catalogBadgeSlide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive adaptations */
+@media (max-width: 1024px) {
+  .product-card-cinema-catalog {
+    border-radius: 20px;
+  }
+
+  .product-card-cinema-catalog:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-cinema::before,
+  .catalog-cinema::after {
+    animation-duration: 20s;
+  }
+
+  .product-card-cinema-catalog {
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .catalog-load-more {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .catalog-cinema::before,
+  .catalog-cinema::after,
+  .product-card-cinema-catalog::before,
+  .catalog-badge,
+  .catalog-load-more {
+    animation: none;
+  }
+
+  .product-card-cinema-catalog:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .product-card-cinema-catalog {
+    border-width: 2px;
+    border-color: #4fc08d;
+  }
+
+  .catalog-filter-button {
+    border-width: 2px;
+  }
+}
+
+/* Dark theme optimizations */
+@media (prefers-color-scheme: dark) {
+  .catalog-cinema {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  }
+
+  .product-card-cinema-catalog {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(10, 10, 10, 0.8) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+}
+
+/* Efectos especiales para elementos interactivos */
+.catalog-interactive {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.catalog-interactive:hover {
+  z-index: 10;
+}
+
+.catalog-interactive::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, transparent, rgba(79, 192, 141, 0.2), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.catalog-interactive:hover::before {
+  opacity: 1;
+}
+
+/* Efectos de pulso para elementos importantes */
+.catalog-pulse {
+  animation: catalogPulse 2s ease-in-out infinite;
+}
+
+@keyframes catalogPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 192, 141, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(79, 192, 141, 0);
+  }
+}

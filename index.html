@@ -1,74 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="./src/assets/icon.ico"
-    />
-    <!-- href="/vite.svg" -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/512/3069/3069118.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn-icons-png.flaticon.com/512/3069/3069118.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn-icons-png.flaticon.com/512/3069/3069118.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1e40af" />
+    
+    <!-- Viewport and Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- DNS Prefetch and Preconnect -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//cdn.makitatools.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" type="font/woff2" crossorigin="anonymous" />
 
     <!-- Primary Meta Tags -->
-    <title>Shadcn/React - Landing template</title>
-    <meta
-      name="title"
-      content="Shadcn/React - Landing template"
-    />
-    <meta
-      name="description"
-      content="Free Shadcn landing page for React developers"
-    />
+    <title>Glastor - Herramientas Profesionales Makita | Equipos de Construcción y Jardinería</title>
+    <meta name="title" content="Glastor - Herramientas Profesionales Makita | Equipos de Construcción y Jardinería" />
+    <meta name="description" content="Descubre la mejor selección de herramientas profesionales Makita en Glastor. Taladros, sierras, lijadoras y equipos de jardinería con la máxima calidad y potencia. Envío gratis en pedidos superiores a $50." />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="herramientas makita, taladros profesionales, sierras eléctricas, lijadoras, equipos construcción, herramientas jardinería, makita colombia, glastor, herramientas profesionales, equipos industriales" />
+    <meta name="author" content="Glastor" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Geographic and Business Meta Tags -->
+    <meta name="geo.region" content="CO" />
+    <meta name="geo.country" content="Colombia" />
+    <meta name="geo.placename" content="Colombia" />
+    <meta name="language" content="Spanish" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Business Information -->
+    <meta name="business:contact_data:street_address" content="Calle Principal 123" />
+    <meta name="business:contact_data:locality" content="Bogotá" />
+    <meta name="business:contact_data:region" content="Cundinamarca" />
+    <meta name="business:contact_data:postal_code" content="110111" />
+    <meta name="business:contact_data:country_name" content="Colombia" />
     <!-- Open Graph / Facebook -->
-    <meta
-      property="og:type"
-      content="website"
-    />
-    <meta
-      property="og:url"
-      content="https://github.com/leoMirandaa/shadcn-landing-page.git"
-    />
-    <meta
-      property="og:title"
-      content="Shadcn/React - Landing template"
-    />
-    <meta
-      property="og:description"
-      content="Free Shadcn landing page for React developers"
-    />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/dbzv9xfjp/image/upload/v1705560686/og-images/shadc-react_gketpd.jpg"
-    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Glastor" />
+    <meta property="og:url" content="https://glastor.com" />
+    <meta property="og:title" content="Glastor - Herramientas Profesionales Makita | Equipos de Construcción y Jardinería" />
+    <meta property="og:description" content="Descubre la mejor selección de herramientas profesionales Makita en Glastor. Taladros, sierras, lijadoras y equipos de jardinería con la máxima calidad y potencia. Envío gratis en pedidos superiores a $50." />
+    <meta property="og:image" content="https://cdn.makitatools.com/apps/wms/home/images/product/hero-august-gwt11z.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Herramientas profesionales Makita - Glastor" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    
+    <!-- Facebook App ID (opcional) -->
+    <meta property="fb:app_id" content="your-facebook-app-id" />
+    
+    <!-- Article Meta Tags (para blog posts) -->
+    <meta property="article:author" content="Glastor" />
+    <meta property="article:publisher" content="https://www.facebook.com/glastor" />
+    <meta property="article:section" content="Herramientas" />
+    <meta property="article:tag" content="Makita" />
+    <meta property="article:tag" content="Herramientas" />
+    <meta property="article:tag" content="Construcción" />
 
-    <!-- Twitter -->
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-
-    <meta
-      name="twitter:url"
-      content="https://github.com/leoMirandaa/shadcn-landing-page.git"
-    />
-    <meta
-      name="twitter:title"
-      content="Shadcn/React - Landing template"
-    />
-    <meta
-      name="twitter:description"
-      content="Free Shadcn landing page for React developers"
-    />
-    <meta
-      name="twitter:image"
-      content="https://res.cloudinary.com/dbzv9xfjp/image/upload/v1705560686/og-images/shadc-react_gketpd.jpg"
-    />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@glastor" />
+    <meta name="twitter:creator" content="@glastor" />
+    <meta name="twitter:url" content="https://glastor.com" />
+    <meta name="twitter:title" content="Glastor - Herramientas Profesionales Makita | Equipos de Construcción y Jardinería" />
+    <meta name="twitter:description" content="Descubre la mejor selección de herramientas profesionales Makita en Glastor. Taladros, sierras, lijadoras y equipos de jardinería con la máxima calidad y potencia. Envío gratis en pedidos superiores a $50." />
+    <meta name="twitter:image" content="https://cdn.makitatools.com/apps/wms/home/images/product/hero-august-gwt11z.webp" />
+    <meta name="twitter:image:alt" content="Herramientas profesionales Makita - Glastor" />
+    
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="glastor-company" />
+    
+    <!-- Pinterest -->
+    <meta name="pinterest-rich-pin" content="true" />
+    <meta property="pinterest:app:name" content="Glastor" />
+    
+    <!-- WhatsApp -->
+    <meta property="whatsapp:title" content="Glastor - Herramientas Profesionales Makita" />
+    <meta property="whatsapp:description" content="Descubre la mejor selección de herramientas profesionales Makita" />
+    <meta property="whatsapp:image" content="https://cdn.makitatools.com/apps/wms/home/images/product/hero-august-gwt11z.webp" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="application-name" content="Glastor" />
+    <meta name="msapplication-TileColor" content="#1e40af" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Glastor",
+      "url": "https://glastor.com",
+      "logo": "https://cdn-icons-png.flaticon.com/512/3069/3069118.png",
+      "description": "Distribuidor oficial de herramientas profesionales Makita en Colombia",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Principal 123",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Cundinamarca",
+        "postalCode": "110111",
+        "addressCountry": "CO"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+57-1-234-5678",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      },
+      "sameAs": [
+        "https://www.facebook.com/glastor",
+        "https://www.instagram.com/glastor",
+        "https://twitter.com/glastor",
+        "https://www.linkedin.com/company/glastor"
+      ]
+    }
+    </script>
+    
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Herramientas Profesionales Makita",
+      "description": "Amplia gama de herramientas profesionales Makita para construcción y jardinería",
+      "brand": {
+        "@type": "Brand",
+        "name": "Makita"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "COP",
+        "lowPrice": "50000",
+        "highPrice": "2000000",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      }
+    }
+    </script>
   </head>
-  <body>
+  <body class="min-h-screen bg-background text-foreground antialiased">
     <div id="root"></div>
     <script
       type="module"

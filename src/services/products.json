@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "sku": "GDT02Z",
+    "name": "Atornillador de Impacto XGT® 40V max Makita GDT02Z",
+    "brand": "Makita",
+    "description": "El Atornillador de Impacto de 4 Velocidades XGT® de 40V max sin Escobillas (GDT02Z) abre nuevos caminos para las aplicaciones de atornillado más exigentes en madera, mampostería y metal. El Atornillador de Impacto de 4 Velocidades cuenta con un Modo de Apriete (modo T) controlado de manera digital para un apriete más rápido de los tornillos autoperforantes que ayuda a evitar daños en el tornillo o la pieza de trabajo.",
+    "price": 250000,
+    "originalPrice": 320000,
+    "imageGallery": [
+      {
+        "url": "https://cdn.makitatools.com/apps/cms/img/gag/be772f89-f02b-47ae-9e07-36cfcdbb98e1_gag03z_p_1500px.png",
+        "alt": "Atornillador de Impacto XGT® 40V max Makita GDT02Z - Vista principal"
+      },
+      {
+        "url": "https://cdn.makitatools.com/apps/cms/img/gag/789c2206-6010-46d6-8c72-8811051a6d22_gag03z_fc_1500px.png",
+        "alt": "Atornillador de Impacto XGT® 40V max Makita GDT02Z - Vista características"
+      }
+    ],
+    "inStock": true,
+    "stockQuantity": 245,
+    "freeShipping": true,
+    "officialStore": true,
+    "warrantyMonths": 12,
+    "shippingTimeDays": 2,
+    "shippingNotes": "Entrega en ciudades principales; zonas alejadas 3–5 días.",
+    "detailsUrl": "https://www.makitatools.com/es/products/details/GDT02Z",
+    "features": [
+      "DOMINE: Motor Makita sin escobillas entrega 1,860 in.lbs. de Máxima Torsión",
+      "MÁS INTELIGENTE: Modo controlado de manera digital, Modo de Apretado (T-mode) para apretado más rápido de tornillos autorroscantes; ayuda a prevenir daño al tornillo o la pieza de trabajo",
+      "MÁS DURADERO: XPT™ con ingeniería para resistencia mejorada contra polvo y agua para sitios de trabajo con condiciones severas",
+      "Selección de potencia de 4 velocidades (0-1,100/ 0-2,100/ 0-3,200/ 0-3,700 RPM & 0-1,400/ 0-2,600/ 0-3,600/ 0-4,100 IPM)",
+      "Diseño compacto de sólo 4-3/4\" de largo; ideal para trabajar en espacios reducidos",
+      "Gatillo de velocidad variable ultra suave proporciona control óptimo",
+      "Carcasa de engranaje reforzada diseñada para resistencia máxima en el sitio de trabajo",
+      "Presenta 2 luces LED para visibilidad de trabajo incrementada",
+      "La comunicación digital dentro de XGT® optimiza el rendimiento para proporcionar hasta 2 veces de potencia continua en aplicaciones de carga pesada",
+      "La comunicación digital dentro de XGT® monitorea activamente y protege contra sobrecarga, sobre-descarga y sobrecalentamiento."
+    ],
+    "specifications": {
+      "Entrada Hex": "1/4\"",
+      "Velocidad Sin Carga (4 vel. var.)": "0 - 1,100 / 0 - 2,100 / 0 - 3,200 / 0 - 3,700 RPM",
+      "Golpes por Minuto (4 vel. var.)": "0 - 1,400 / 0 - 2,600 / 0 - 3,600 / 0 - 4,100 IPM",
+      "Torsión Máxima (in.lbs.)": "1,860 in.lbs.",
+      "Selección de Potencia de Velocidad": "4",
+      "Longitud Total": "4-3/4\"",
+      "Peso Neto (con la batería, se vende por separado)": "3.7 lbs.",
+      "Sistema": "40V max XGT®",
+      "Profundidad de Embalaje (in.)": "3.86\"",
+      "Alto de Embalaje (in.)": "8.9\"",
+      "Ancho de Embalaje (in.)": "6.02\"",
+      "Peso del Envío": "2.8 lbs.",
+      "Código UPC": "088381-777735"
+    }
+  }
+]
+
+

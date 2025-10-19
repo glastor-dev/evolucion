@@ -1,0 +1,558 @@
+/* ===================================================================
+   WHATSAPP CINEMA STYLES - Cinematographic Design System
+   ================================================================= */
+
+/* Variables CSS para consistencia */
+:root {
+  --whatsapp-primary: #25d366;
+  --whatsapp-secondary: #128c7e;
+  --whatsapp-accent: #34b7f1;
+  --whatsapp-dark: #075e54;
+  --cinema-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --cinema-glow: 0 0 40px rgba(37, 211, 102, 0.3);
+}
+
+/* ===================================================================
+   WHATSAPP CINEMA COMPONENT (Principal)
+   ================================================================= */
+
+.whatsapp-cinema {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.whatsapp-cinema button {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--whatsapp-primary) 0%,
+    var(--whatsapp-secondary) 50%,
+    #10b981 100%
+  );
+  border: none;
+  border-radius: 16px;
+  padding: 16px 32px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  box-shadow: var(--cinema-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-width: 280px;
+  backdrop-filter: blur(10px);
+}
+
+.whatsapp-cinema button:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    var(--cinema-shadow),
+    var(--cinema-glow),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.whatsapp-cinema button:active {
+  transform: translateY(-4px) scale(0.98);
+}
+
+/* Efectos de gradiente animado */
+.whatsapp-cinema button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.whatsapp-cinema button:hover::before {
+  left: 100%;
+}
+
+/* Partículas de fondo */
+.whatsapp-cinema .particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ===================================================================
+   WHATSAPP FLOATING COMPONENT
+   ================================================================= */
+
+.whatsapp-floating {
+  position: relative;
+  background: linear-gradient(135deg, var(--whatsapp-primary), var(--whatsapp-secondary));
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  box-shadow:
+    var(--cinema-shadow),
+    0 0 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 50;
+}
+
+.whatsapp-floating:hover {
+  transform: scale(1.1) rotate(5deg) translateY(-5px);
+  box-shadow:
+    0 35px 60px -12px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-floating:active {
+  transform: scale(0.95) rotate(-2deg);
+}
+
+/* Efecto de pulso para floating */
+.whatsapp-floating::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse-ring 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Ondas concéntricas */
+.whatsapp-floating::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(37, 211, 102, 0.2) 80%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  animation: pulse-ring 2s ease-in-out infinite 1s;
+  z-index: -2;
+}
+
+/* ===================================================================
+   WHATSAPP PREMIUM COMPONENT (Glassmorphism)
+   ================================================================= */
+
+.whatsapp-premium {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow:
+    var(--cinema-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 320px;
+  cursor: pointer;
+}
+
+.whatsapp-premium:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(37, 211, 102, 0.3);
+  box-shadow:
+    0 35px 60px -12px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(37, 211, 102, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Grid pattern para premium */
+.whatsapp-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(37, 211, 102, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 211, 102, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-premium:hover::before {
+  opacity: 1;
+}
+
+/* Efecto de brillo premium */
+.whatsapp-premium::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(37, 211, 102, 0.1),
+    transparent,
+    rgba(16, 185, 129, 0.1),
+    transparent
+  );
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-premium:hover::after {
+  opacity: 1;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ===================================================================
+   TOOLTIP CINEMATOGRÁFICO
+   ================================================================= */
+
+.whatsapp-tooltip {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(37, 211, 102, 0.3);
+  z-index: 60;
+  max-width: 200px;
+  animation: tooltip-appear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.whatsapp-tooltip::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: rgba(15, 23, 42, 0.95);
+}
+
+/* Estado online/offline */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.status-dot.online {
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.status-dot.offline {
+  background: #6b7280;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* ===================================================================
+   EFECTOS DE PARTÍCULAS GENERALES
+   ================================================================= */
+
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.cinema-particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cinema-particle.small {
+  width: 2px;
+  height: 2px;
+  animation: float-small 4s ease-in-out infinite;
+}
+
+.cinema-particle.medium {
+  width: 3px;
+  height: 3px;
+  animation: float-medium 3s ease-in-out infinite;
+}
+
+.cinema-particle.large {
+  width: 4px;
+  height: 4px;
+  animation: float-large 5s ease-in-out infinite;
+}
+
+@keyframes float-small {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-15px) translateX(5px) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-medium {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-20px) translateX(-5px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes float-large {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-25px) translateX(3px) scale(1.4);
+    opacity: 0.9;
+  }
+}
+
+/* ===================================================================
+   EFECTOS DE NOTIFICACIÓN
+   ================================================================= */
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow:
+    0 4px 12px rgba(239, 68, 68, 0.4),
+    0 0 0 2px white;
+  animation: notification-bounce 1s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes notification-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   ================================================================= */
+
+@media (max-width: 768px) {
+  .whatsapp-cinema button {
+    min-width: 240px;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+
+  .whatsapp-floating {
+    width: 56px;
+    height: 56px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-premium {
+    min-width: 280px;
+    padding: 16px;
+  }
+
+  .whatsapp-tooltip {
+    max-width: 160px;
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-cinema button {
+    min-width: 200px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-floating {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-premium {
+    min-width: 260px;
+    padding: 14px;
+  }
+}
+
+/* ===================================================================
+   ACCESIBILIDAD Y PERFORMANCE
+   ================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-cinema button,
+  .whatsapp-floating,
+  .whatsapp-premium,
+  .cinema-particle,
+  .particle {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .whatsapp-cinema button:hover,
+  .whatsapp-floating:hover,
+  .whatsapp-premium:hover {
+    transform: none !important;
+  }
+}
+
+/* Focus states para accesibilidad */
+.whatsapp-cinema button:focus,
+.whatsapp-floating:focus,
+.whatsapp-premium:focus {
+  outline: 2px solid var(--whatsapp-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .whatsapp-cinema button,
+  .whatsapp-floating,
+  .whatsapp-premium {
+    border: 2px solid var(--whatsapp-primary);
+  }
+}
+
+/* ===================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ================================================================= */
+
+.whatsapp-cinema,
+.whatsapp-floating,
+.whatsapp-premium {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.cinema-particle,
+.particle {
+  will-change: transform, opacity;
+  contain: strict;
+}
+
+/* GPU acceleration */
+.whatsapp-cinema button,
+.whatsapp-floating,
+.whatsapp-premium {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}

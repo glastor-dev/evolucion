@@ -1,0 +1,406 @@
+/* Product Cards Cinema - Diseño cinematográfico avanzado */
+
+/* Contenedor principal Cinema */
+.product-card-cinema {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0a0a0a 100%);
+  border: 1px solid rgba(79, 192, 141, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(79, 192, 141, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card-cinema:hover {
+  border-color: rgba(79, 192, 141, 0.5);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(79, 192, 141, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Efectos de partículas específicos */
+.product-card-cinema::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(79, 192, 141, 0.1) 0%,
+    rgba(66, 184, 131, 0.05) 30%,
+    transparent 70%
+  );
+  animation: cinemaRotate 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes cinemaRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contenedor Premium */
+.product-card-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  backdrop-filter: blur(30px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product-card-premium:hover {
+  border-color: rgba(79, 192, 141, 0.4);
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(79, 192, 141, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-12px) rotateY(5deg);
+}
+
+/* Grid pattern premium */
+.product-card-premium::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(79, 192, 141, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 192, 141, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: gridFloat 15s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes gridFloat {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(10px, 10px);
+  }
+}
+
+/* Efectos de imagen cinematográfica */
+.product-card-cinema img,
+.product-card-premium img {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.9) contrast(1.1) saturate(1.1);
+}
+
+.product-card-cinema:hover img,
+.product-card-premium:hover img {
+  filter: brightness(1.1) contrast(1.2) saturate(1.3);
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Efectos de badges cinematográficos */
+.cinema-badge {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff4444, #ff8800, #ff4444);
+  background-size: 200% 200%;
+  animation: badgeShine 3s ease-in-out infinite;
+}
+
+@keyframes badgeShine {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cinema-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: badgeSlide 2s infinite;
+}
+
+@keyframes badgeSlide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Botones cinematográficos */
+.cinema-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #42b883, #4fc08d, #42b883);
+  background-size: 200% 200%;
+  animation: buttonGradient 4s ease infinite;
+  box-shadow:
+    0 4px 15px rgba(66, 184, 131, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+@keyframes buttonGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cinema-button:hover {
+  box-shadow:
+    0 8px 25px rgba(66, 184, 131, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.cinema-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cinema-button:hover::before {
+  left: 100%;
+}
+
+/* Efectos de rating cinematográfico */
+.cinema-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.cinema-star {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.5));
+}
+
+.cinema-star:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.8));
+}
+
+/* Efectos de precio cinematográfico */
+.cinema-price {
+  position: relative;
+  background: linear-gradient(45deg, #4fc08d, #42b883);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(79, 192, 141, 0.5);
+  animation: priceGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes priceGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(79, 192, 141, 0.5);
+    filter: brightness(1);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(79, 192, 141, 0.8);
+    filter: brightness(1.2);
+  }
+}
+
+/* Efectos de features premium */
+.premium-feature {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.premium-feature:hover::before {
+  left: 100%;
+}
+
+.premium-feature:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+  border-color: rgba(79, 192, 141, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones de entrada */
+.cinema-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cinemaFadeIn 0.8s ease forwards;
+}
+
+@keyframes cinemaFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cinema-scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: cinemaScaleIn 0.6s ease forwards;
+}
+
+@keyframes cinemaScaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Efectos de hover avanzados */
+.cinema-hover-lift {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cinema-hover-lift:hover {
+  transform: translateY(-8px) scale(1.02) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos de brillo móvil */
+.cinema-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.cinema-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: skewX(-45deg);
+  transition: left 0.8s ease;
+}
+
+.cinema-shine:hover::after {
+  left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card-cinema,
+  .product-card-premium {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .product-card-cinema:hover,
+  .product-card-premium:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .cinema-price {
+    animation: none;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .product-card-cinema::before,
+  .product-card-premium::after,
+  .cinema-badge,
+  .cinema-button,
+  .cinema-price {
+    animation: none;
+  }
+
+  .product-card-cinema:hover,
+  .product-card-premium:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .product-card-cinema {
+    background: linear-gradient(135deg, #000000 0%, #111111 50%, #000000 100%);
+  }
+
+  .product-card-premium {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 50%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .product-card-cinema,
+  .product-card-premium {
+    border-width: 2px;
+    border-color: #4fc08d;
+  }
+
+  .cinema-price {
+    color: #4fc08d;
+    -webkit-text-fill-color: #4fc08d;
+  }
+}

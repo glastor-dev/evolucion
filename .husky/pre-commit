@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Validar productos JSON
+npm run validate-products
+
+# Lint y formato sobre archivos staged
+npx lint-staged

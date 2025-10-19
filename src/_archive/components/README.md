@@ -1,0 +1,1 @@
+Componentes archivados sin referencias actuales.

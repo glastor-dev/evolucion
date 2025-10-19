@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Glastor - Catálogo Completo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            height: 200px;
+            object-fit: contain;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <header class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Glastor</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/" class="hover:text-green-400">Inicio</a></li>
+                    <li><a href="/tienda-directa.html" class="text-green-400 font-bold">Tienda</a></li>
+                    <li><a href="/servicios" class="hover:text-green-400">Servicios</a></li>
+                    <li><a href="/about" class="hover:text-green-400">Acerca de</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Catálogo de Productos</h2>
+            
+            <div id="loading" class="text-center py-12">
+                <svg class="animate-spin h-10 w-10 mx-auto text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="mt-4 text-gray-600">Cargando productos...</p>
+            </div>
+            
+            <div id="error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span id="error-message" class="block sm:inline">Hubo un problema al cargar los productos.</span>
+            </div>
+            
+            <div id="products-count" class="mb-6 text-gray-600 hidden">
+                Mostrando <span id="count" class="font-bold">0</span> productos
+            </div>
+            
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Los productos se cargarán aquí -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Glastor</h3>
+                    <p class="text-gray-400">Herramientas y equipos de calidad para profesionales</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Contacto</h4>
+                    <p class="text-gray-400">contacto@glastor.com</p>
+                    <p class="text-gray-400">+56 9 1234 5678</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2023 Glastor. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Elementos del DOM
+        const loadingEl = document.getElementById('loading');
+        const errorEl = document.getElementById('error');
+        const errorMessageEl = document.getElementById('error-message');
+        const productsCountEl = document.getElementById('products-count');
+        const countEl = document.getElementById('count');
+        const productsGridEl = document.getElementById('products-grid');
+        
+        // Función para formatear precio
+        function formatPrice(price) {
+            return new Intl.NumberFormat('es-CL', {
+                style: 'currency',
+                currency: 'CLP'
+            }).format(price);
+        }
+        
+        // Cargar productos
+        async function loadProducts() {
+            try {
+                console.log('Cargando productos...');
+                
+                // Añadir timestamp para evitar caché
+                const response = await fetch('/products.json?t=' + Date.now());
+                
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+                
+                const products = await response.json();
+                console.log(`Se cargaron ${products.length} productos`);
+                
+                if (!products || products.length === 0) {
+                    throw new Error('No se encontraron productos');
+                }
+                
+                // Mostrar contador
+                countEl.textContent = products.length;
+                productsCountEl.classList.remove('hidden');
+                
+                // Generar HTML para cada producto
+                const productsHTML = products.map(product => {
+                    const image = product.image || (product.imageGallery && product.imageGallery[0]) || '/placeholder-product.svg';
+                    const hasDiscount = product.originalPrice && product.originalPrice > product.price;
+                    
+                    return `
+                        <a href="/#/tienda/${product.id}" class="block">
+                            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                                <img src="${image}" alt="${product.name}" class="product-image w-full">
+                                <div class="p-4">
+                                    <h3 class="font-bold text-lg mb-1 line-clamp-2">${product.name}</h3>
+                                    <p class="text-gray-600 text-sm mb-2">${product.brand || 'Sin marca'}</p>
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            ${hasDiscount ? `<span class="text-gray-500 line-through text-sm">${formatPrice(product.originalPrice)}</span>` : ''}
+                                            <span class="text-green-600 font-bold text-lg">${formatPrice(product.price)}</span>
+                                        </div>
+                                        ${product.inStock !== false ? 
+                                            `<span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">En stock</span>` : 
+                                            `<span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Agotado</span>`
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+                
+                // Insertar productos en la página
+                productsGridEl.innerHTML = productsHTML;
+                
+                // Ocultar loading
+                loadingEl.classList.add('hidden');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessageEl.textContent = error.message || 'Error al cargar productos';
+                errorEl.classList.remove('hidden');
+                loadingEl.classList.add('hidden');
+            }
+        }
+        
+        // Cargar productos al iniciar
+        document.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+</body>
+</html>

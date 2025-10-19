@@ -1,0 +1,234 @@
+/* Sistema de CSS optimizado para móviles */
+
+/* Variables CSS para breakpoints consistentes */
+:root {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* Espaciado responsive */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Tipografía fluida */
+  --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 2.5vw, 1rem);
+  --text-base: clamp(1rem, 3vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 3.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 4vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 5vw, 2rem);
+  --text-3xl: clamp(1.875rem, 6vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 7vw, 3rem);
+  
+  /* Containers fluidos */
+  --container-padding: clamp(1rem, 4vw, 2rem);
+  --container-max-width: min(100% - var(--container-padding) * 2, 1200px);
+}
+
+/* Utilidades para texto responsive */
+.text-responsive-xs { font-size: var(--text-xs); }
+.text-responsive-sm { font-size: var(--text-sm); }
+.text-responsive-base { font-size: var(--text-base); }
+.text-responsive-lg { font-size: var(--text-lg); }
+.text-responsive-xl { font-size: var(--text-xl); }
+.text-responsive-2xl { font-size: var(--text-2xl); }
+.text-responsive-3xl { font-size: var(--text-3xl); }
+.text-responsive-4xl { font-size: var(--text-4xl); }
+
+/* Container mejorado */
+.container-responsive {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-inline: var(--container-padding);
+}
+
+/* Grid responsivo mejorado */
+.grid-responsive {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .grid-responsive { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Botones touch-friendly */
+.btn-touch {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--text-base);
+  touch-action: manipulation;
+  user-select: none;
+}
+
+@media (max-width: 767px) {
+  .btn-touch {
+    min-height: 48px;
+    font-size: var(--text-lg);
+    padding: 1rem 2rem;
+  }
+}
+
+/* Modal responsive */
+.modal-responsive {
+  width: min(95vw, 500px);
+  max-height: min(90vh, 600px);
+  margin: auto;
+  border-radius: clamp(0.5rem, 2vw, 1rem);
+}
+
+@media (max-width: 767px) {
+  .modal-responsive {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+/* Hero section responsive */
+.hero-responsive {
+  min-height: clamp(60vh, 100vh, 800px);
+  padding: clamp(2rem, 8vh, 4rem) 0;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.4;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+/* Product cards responsive */
+.product-card {
+  border-radius: clamp(0.5rem, 2vw, 1rem);
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.product-image {
+  aspect-ratio: 1;
+  border-radius: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+/* Navigation responsive */
+.nav-responsive {
+  padding: clamp(0.5rem, 2vw, 1rem) var(--container-padding);
+}
+
+.nav-link {
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  font-size: var(--text-sm);
+}
+
+/* Form elements responsive */
+.form-input {
+  min-height: 44px;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
+  font-size: var(--text-base);
+  border-radius: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+@media (max-width: 767px) {
+  .form-input {
+    min-height: 48px;
+    font-size: 16px; /* Previene zoom en iOS */
+  }
+}
+
+/* Spacing utilities responsive */
+.space-responsive-xs { gap: var(--spacing-xs); }
+.space-responsive-sm { gap: var(--spacing-sm); }
+.space-responsive-md { gap: var(--spacing-md); }
+.space-responsive-lg { gap: var(--spacing-lg); }
+.space-responsive-xl { gap: var(--spacing-xl); }
+
+/* Visibility utilities mejoradas */
+.visible-mobile { display: block; }
+.visible-tablet { display: none; }
+.visible-desktop { display: none; }
+
+@media (min-width: 768px) {
+  .visible-mobile { display: none; }
+  .visible-tablet { display: block; }
+}
+
+@media (min-width: 1024px) {
+  .visible-tablet { display: none; }
+  .visible-desktop { display: block; }
+}
+
+/* Animaciones optimizadas para mobile */
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  .animate-on-desktop {
+    transition: all 0.3s ease;
+  }
+}
+
+@media (max-width: 767px) {
+  .animate-on-desktop {
+    transition: none;
+  }
+}
+
+/* Touch improvements */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:shadow-lg:hover {
+    box-shadow: none;
+  }
+  
+  /* Mejorar feedback tactil */
+  .btn-touch:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+/* Scroll optimization for mobile */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 767px) {
+  .scroll-container {
+    scroll-behavior: auto; /* Mejor rendimiento en móvil */
+  }
+}
+
+/* Safe area adjustments for mobile browsers */
+@supports (padding: max(0px)) {
+  .safe-area-inset-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-inset-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
